@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<div id="divId">0</div>
+<button onclick="start()">Start</button>
+<button onclick="reset()">Reset</button>
+<button onclick="stop()">Stop</button>
+
+<script>
+function start(){
+    let count = 0;
+    let divId = document.getElementById("divId");
+    let settingInterval = setInterval(function() {
+        count++;
+        divId.innerText = count;
+    }, 1000);
+}
+
+function stop(){
+    clearInterval(settingInterval);
+}
+
+function reset(){
+    let divId = document.getElementById("divId");
+    divId.innerText = 0;
+}
+</script>
+</body>
+</html>
